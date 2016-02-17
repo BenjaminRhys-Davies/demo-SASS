@@ -1,0 +1,28 @@
+.sass {
+   position: relative;
+   height: 64px;
+   padding-left: 42px;
+   font-size: 1150%;
+   text-align: right;
+   line-height: 15%;
+   overflow: hidden;
+
+   background-color: $color-grey;
+   color: $color-white;
+
+   &::before {
+      position: absolute;
+      top: 0;
+      left: -32px;
+      display: block;
+      content: ' ';
+      height: 64px;
+      width: 64px;
+      background: url(images/sass-64.png) 50% 50% no-repeat;
+   }
+
+   &:hover {
+      background-color: $color-hover;
+      color: $color-grey;
+   }
+}
