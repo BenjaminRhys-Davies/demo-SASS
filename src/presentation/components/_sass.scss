@@ -1,28 +1,62 @@
+$height_sass: 64;
+$height_image_sass: $height_sass * 1px;
+$duration-transition: 3s;
+
 .sass {
    position: relative;
-   height: 64px;
-   padding-left: 42px;
-   font-size: 1150%;
-   text-align: right;
-   line-height: 15%;
+   height: $height_image_sass;
    overflow: hidden;
 
-   background-color: $color-grey;
-   color: $color-white;
+   display: block;
+   padding: 0 $height_image_sass*0.66;
+   font-size: 1150%;
+   line-height: 15%;
+   text-align: right;
+   color: $color-highlight;
+   @include text-shadow();
+
+   cursor: pointer;
+
+   background-image: linear-gradient(
+      to right,
+      rgba($color-highlight, 0), 
+      $color-lowlight 50%,
+      $color-lowlight
+   );
+
+   @include transition($duration-transition);
 
    &::before {
       position: absolute;
       top: 0;
-      left: -32px;
+      left: -50%;
       display: block;
-      content: ' ';
-      height: 64px;
-      width: 64px;
-      background: url(images/sass-64.png) 50% 50% no-repeat;
+      content: '';
+      width: 100%;
+      height: $height_image_sass;
+      z-index: layer(logo);
+
+      @include transition($duration-transition);
+      background: url(images/sass-#{$height_sass}.png) 50% 50% no-repeat;
    }
 
-   &:hover {
-      background-color: $color-hover;
-      color: $color-grey;
+   &:hover::before {
+      @include transform(translateX(100%) rotate(1440deg));
+   }
+
+   span {
+      position: relative;
+      z-index: layer(under);
+
+      &:nth-child(even) {
+         z-index: layer(over);
+         background-image: linear-gradient(
+            to right, 
+            rgba($color-highlight, 0), 
+            rgba($color-lowlight, 0.9) 35%,
+            rgba($color-lowlight, 0.9) 65%,
+            rgba($color-highlight, 0) 
+         );
+      }
    }
 }

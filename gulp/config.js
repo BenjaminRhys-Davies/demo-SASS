@@ -35,8 +35,8 @@ module.exports = {
     src: 'src/index.html',
     dest: dest
   },
-  images: {
-    src: 'src/assets/**/*.{png,jpg,gif,ico}',
+  assets: {
+    src: 'src/assets/**/*.{png,jpg,gif,ico,xml,txt}',
     dest: dest
   },
   watch: {

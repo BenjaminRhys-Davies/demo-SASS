@@ -1,0 +1,3 @@
+@mixin text-shadow ($alpha: 1) {
+    text-shadow: 0 0 10px rgba($color-highlight, $alpha);
+}
