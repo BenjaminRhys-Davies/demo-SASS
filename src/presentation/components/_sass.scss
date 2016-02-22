@@ -1,87 +1,80 @@
-$height_sass: 64;
-$height_image_sass: $height_sass * 1px;
+$height: 64;
+$height_image: $height * 1px;
 $duration-transition: 3s;
 $rotation-transition: 1440deg;
 $translateX-transition: 100%;
 
+// BLOCK: sass
 .sass {
-   position: relative;
-   height: $height_image_sass;
-   overflow: hidden;
+    @include text-shadow;
+    @include rtl-invert(text-align, right);
+    @include linear-gradient(
+        right,
+        rgba($color-highlight, 0),
+        $color-lowlight 50%,
+        $color-lowlight
+    );
+    @include transition($duration-transition);
 
-   display: block;
-   padding: 0 $height_image_sass*0.66;
-   font-size: 1150%;
-   line-height: 15%;
-   @include rtl-invert(text-align, right);
-   color: $color-highlight;
-   @include text-shadow();
+    position: relative;
+    height: $height_image;
+    overflow: hidden;
+    display: block;
+    padding: 0 $height_image*0.66;
+    font-size: 13rem;
+    line-height: 15%;
+    color: $color-highlight;
+    cursor: pointer;
 
-   cursor: pointer;
+    &::before {
+        @include rtl-invert(left, -50%);
+        @include transition($duration-transition);
+        position: absolute;
+        top: 0;
+        display: block;
+        content: '';
+        width: 100%;
+        height: $height_image;
+        z-index: layer(logo);
+        background: url(images/sass-#{$height}.png) 50% 50% no-repeat;
+    }
 
-   background-image: linear-gradient(
-      to right,
-      rgba($color-highlight, 0), 
-      $color-lowlight 50%,
-      $color-lowlight
-   );
+    &:hover::before {
+        @include transform(translateX($translateX-transition) rotate($rotation-transition));
 
-   @include layout-modifiers(rtl) {
-      background-image: linear-gradient(
-         to left,
-         rgba($color-highlight, 0), 
-         $color-lowlight 50%,
-         $color-lowlight
-      );
-   }
+        @include layout-modifiers(rtl) {
+            @include transform(translateX(-1*$translateX-transition) rotate(-1*$rotation-transition));
+        }
+    }
+}
 
-   @include transition($duration-transition);
+// ELEMENTS
 
-   &::before {
-      position: absolute;
-      top: 0;
-      @include rtl-invert(left, -50%);
-      display: block;
-      content: '';
-      width: 100%;
-      height: $height_image_sass;
-      z-index: layer(logo);
+%weave {
+    z-index: layer(over);
+    background-image: linear-gradient(
+        to left,
+        rgba($color-highlight, 0),
+        rgba($color-lowlight, .9) 35%,
+        rgba($color-lowlight, 1) 50%,
+        rgba($color-lowlight, .9) 65%,
+        rgba($color-highlight, 0)
+    );
+}
 
-      @include transition($duration-transition);
-      background: url(images/sass-#{$height_sass}.png) 50% 50% no-repeat;
-   }
+.sass__weave {
+    position: relative;
+    z-index: layer(under);
 
-   &:hover::before {
-      @include transform(translateX($translateX-transition) rotate($rotation-transition));
+    @include layout-modifiers(ltr) {
+        &:nth-child(even) {
+            @extend %weave;
+        }
+    }
 
-      @include layout-modifiers(rtl) {
-         @include transform(translateX(-1*$translateX-transition) rotate(-1*$rotation-transition));
-      }
-   }
-
-   span {
-      position: relative;
-      z-index: layer(under);
-
-      &:nth-child(even) {
-         z-index: layer(over);
-         background-image: linear-gradient(
-            to right, 
-            rgba($color-highlight, 0), 
-            rgba($color-lowlight, 0.9) 35%,
-            rgba($color-lowlight, 0.9) 65%,
-            rgba($color-highlight, 0) 
-         );
-
-         @include layout-modifiers(rtl) {
-            background-image: linear-gradient(
-               to left,
-               rgba($color-highlight, 0), 
-               rgba($color-lowlight, 0.9) 35%,
-               rgba($color-lowlight, 0.9) 65%,
-               rgba($color-highlight, 0) 
-            );
-         }
-      }
-   }
+    @include layout-modifiers(rtl) {
+        &:nth-child(odd) {
+            @extend %weave;
+        }
+    }
 }

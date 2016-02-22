@@ -1,13 +1,3 @@
-@function contains($list, $var) {
-    $out: false;
-    @each $item in $list {
-        @if $item == $var {
-            $out: true;
-        }
-    }
-    @return $out;
-}
-
 // Receives a comma-separated list of modifiers, as defined below
 @mixin layout-modifiers($modifiers...) {
     $selector: '';
