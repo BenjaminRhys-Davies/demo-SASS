@@ -16,6 +16,27 @@ $ npm run build
 ```
 
 ## Achitecture
-* React+Flux
+* Gulp build tooling
 * SASS
-* Gulp build process
+* React
+
+## Topics
+
+This demonstration covers the following areas of interest:
+
+* automated linting
+* automated generation of source maps
+* reusable modularisation of presention into:
+   * components
+   * functions
+   * mixins
+   * settings
+
+With special emphasis upon the use of:
+* BEM naming methodology
+* SASS variables
+* reusable mixins
+* CSS layering
+* Right-to-Left content direction modifiers
+* CSS3 transforms & transitions
+* CSS pseudo-elements
