@@ -1,0 +1,10 @@
+@mixin navigation_hover () {
+  color: rgba($color-header, 0.5);
+  transition: all .5s linear;
+
+  &:hover {
+    color: $color-header;
+    @include text-shadow($text-shadow-header);
+    background-color: $color-hover-menuitem;
+  }
+}

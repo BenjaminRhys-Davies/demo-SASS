@@ -1,12 +1,12 @@
 @mixin linear-gradient ($direction: left, $gradients...) {
-    $inverse: (
-        left: right,
-        right: left
+  $inverse: (
+    left: right,
+    right: left
     );
 
-    background-image: linear-gradient(to $direction, $gradients);
+  background-image: linear-gradient(to $direction, $gradients);
 
-    @include layout-modifiers(rtl) {
-        background-image: linear-gradient(to map-get($inverse, $direction), $gradients);
-    }
+  @include layout-modifiers(rtl) {
+    background-image: linear-gradient(to map-get($inverse, $direction), $gradients);
+  }
 }

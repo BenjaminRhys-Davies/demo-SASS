@@ -5,6 +5,8 @@
   "author": "Benjamin Rhys-Davies",
   "license": "MIT",
   "devDependencies": {
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
     "babelify": "^7.2.0",
     "browserify": "^13.0.0",
     "gulp": "^3.9.1",
@@ -17,13 +19,15 @@
     "gulp-util": "^3.0.7",
     "reactify": "^1.1.1",
     "require-dir": "^0.3.0",
+    "semistandard": "^7.0.5",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
   },
   "scripts": {
     "dev": "gulp --type dev",
     "start": "gulp",
-    "build": "gulp build"
+    "build": "gulp build",
+    "test": "semistandard"
   },
   "dependencies": {
     "react": "^0.13.3"

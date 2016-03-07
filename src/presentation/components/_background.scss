@@ -1,0 +1,7 @@
+.background {
+  position: fixed;
+  top: 4rem + 2rem;
+  @include height-by-background-image('movie/kungfupanda/background-2.jpg');
+  background: url('movie/kungfupanda/background-2.jpg') 0 0 no-repeat;
+  background-size: contain;
+}

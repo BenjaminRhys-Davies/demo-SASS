@@ -1,2 +1,21 @@
 $color-lowlight: #c0c0c0;
 $color-highlight: #fff;
+$color-darkness: #000;
+$color-dark: #333;
+
+$color-outline: $color-lowlight;
+
+$color-header: $color-highlight;
+$text-shadow-header: $color-dark;
+$background-header: #0090d2;
+$box-shadow: rgba($color-dark, 0.5);
+
+$color-hover-menuitem: #59afe1;
+
+$color-main: $color-highlight;
+$background-main: $color-darkness;
+
+$color-details-seperator: $color-hover-menuitem;
+
+$color-artist-tiles: $color-highlight;
+$background-artist-tiles: #f00;

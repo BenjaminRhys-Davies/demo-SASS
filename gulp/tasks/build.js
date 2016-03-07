@@ -4,5 +4,5 @@ var config = require('../config').watch;
 
 gulp.task('build', ['browserify', 'scss-lint', 'sass', 'html', 'assets'], function () {
   gulp.src(config.src)
-     .pipe(connect.reload());
+  .pipe(connect.reload());
 });

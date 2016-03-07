@@ -1,0 +1,27 @@
+.navigationtoggle {
+  position: absolute;
+  top: 0;
+  @include rtl_invert(left, 0);
+  @include navigation_hover;
+
+  text-align: center;
+  height: 2rem;
+  width: 2rem;
+  line-height: 2rem;
+  font-size: 1rem;
+
+  @media (max-width: $mobile-breakpoint + 20px) {
+    @include rtl_invert(left, -1rem);
+  }
+
+  @media (min-width: $mobile-breakpoint) {
+    height: 3rem;
+    width: 3rem;
+    line-height: 3rem;
+    font-size: 1.4rem;
+  }
+
+  @media (min-width: $desktop-breakpoint) {
+    display: none;
+  }
+}

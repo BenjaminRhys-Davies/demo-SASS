@@ -3,6 +3,7 @@ var dest = './dist';
 var src = './src';
 var maps = './maps';
 
+var assets = src + '/assets';
 var presentation = src + '/presentation';
 var behaviour = src + '/behaviour';
 
@@ -37,7 +38,10 @@ module.exports = {
   },
   browserify: {
     settings: {
-      transform: ['reactify', 'babelify']
+      transformations: [
+        { transform: 'reactify' },
+        { transform: 'babelify', opts: { presets: ['es2015', 'react'] } }
+      ]
     },
     src: behaviour + '/index.jsx',
     dest: dest,
@@ -49,7 +53,7 @@ module.exports = {
     dest: dest
   },
   assets: {
-    src: 'src/assets/**/*.{png,jpg,gif,ico,xml,txt}',
+    src: assets + '/**/*.{png,jpg,gif,ico,xml,txt,svg}',
     dest: dest
   },
   watch: {

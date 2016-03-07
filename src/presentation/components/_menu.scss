@@ -1,0 +1,8 @@
+$height-menu: 3rem;
+
+.menu {
+  position: absolute;
+  @include rtl_invert(right, 0);
+  top: 0;
+  height: $height-menu;
+}

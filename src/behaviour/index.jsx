@@ -1,12 +1,16 @@
 const React = require('react');
+const Banner = require('./components/banner.jsx');
+const Header = require('./components/header.jsx');
+const Cover = require('./components/cover.jsx');
+const Background = require('./components/background.jsx');
 
 React.render(<section>
-
-    <p><abbr key='sass' className='sass' title='Syntactically Awesome Style Sheets'>
-        <span className='sass__weave'>s</span>
-        <span className='sass__weave'>a</span>
-        <span className='sass__weave'>s</span>
-        <span className='sass__weave'>s</span>
-    </abbr></p>
-
-</section>, document.getElementById('main'));
+  <Banner />
+  <Header />
+  <main className='main'>
+    <Background />
+    <Cover />
+  </main>
+  </section>,
+  document.getElementById('main')
+  );

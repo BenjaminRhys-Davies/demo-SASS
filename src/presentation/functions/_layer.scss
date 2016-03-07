@@ -1,21 +1,21 @@
 @function layer($keys...) {
-    $map: $layer;
-    $list: 'layer';
+  $map: $layer;
+  $list: 'layer';
 
-    @each $key in $keys {
-        @if not map-has-key($map, $key) {
-            @error 'Layer: Could not find `#{$key}` in [#{$list}]';
-        }
-
-        $list: append($list, $key, 'comma');
-        $value: map-get($map, $key);
-
-        @if type-of($value) == map {
-            $map: map-get($map, $key);
-        } @else {
-            $map: $value;
-        }
+  @each $key in $keys {
+    @if not map-has-key($map, $key) {
+      @error 'Layer: Could not find `#{$key}` in [#{$list}]';
     }
 
-    @return $map;
+    $list: append($list, $key, 'comma');
+    $value: map-get($map, $key);
+
+    @if type-of($value) == map {
+      $map: map-get($map, $key);
+    } @else {
+      $map: $value;
+    }
+  }
+
+  @return $map;
 }

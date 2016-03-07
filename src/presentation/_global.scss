@@ -1,9 +1,21 @@
 body {
-    font-family: Helvetica, Arial, sans-serif;
-    font-size-adjust: .523;
-    font-size: 16px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size-adjust: .523;
+  font-size: 16px;
+  background: $background-main;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
+}
+
+button {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+a:focus,
+button:focus {
+  outline: 1px ridge $color-outline;
 }

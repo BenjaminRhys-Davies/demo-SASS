@@ -1,0 +1,107 @@
+.cover {
+  color: $color-main;
+  position: relative;
+  margin-top: -7rem;
+
+  &::before {
+    content: '';
+    display: block;
+    @include height-by-background-image('movie/kungfupanda/background-1.jpg');
+  }
+}
+
+.cover__background {
+  overflow: hidden;
+  position: relative;
+  background-image: linear-gradient(
+    to bottom,
+    rgba($color-darkness, 0),
+    rgba($color-darkness, 1) 80%,
+    rgba($color-darkness, 1)
+    );
+}
+
+.cover__title {
+  padding-top: 7.8rem;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+}
+
+.cover__details {
+  opacity: 0.6;
+  font-size: 0.8rem;
+  z-index: layer(main);
+  margin: 0 2rem 2rem 2rem;
+}
+
+.cover__detailseperator {
+  color: $background-header;
+  font-weight: bold;
+  margin: 0 0.3rem;
+}
+
+.cover__image {
+  @include rtl_invert(float, left);
+  margin: 2rem;
+  width: 100px;
+  height: 149px;
+  box-shadow: 0 0 0.4rem $box-shadow;
+
+  img {
+    width: 100px;
+  }
+}
+
+.cover__description {
+  clear: both;
+  background: url('movie/kungfupanda/background-1.jpg') 0 6rem no-repeat;
+  background-attachment: fixed;
+  background-size: contain;
+
+  p {
+    margin: 0 2rem 1rem 2rem;
+    @include rtl_invert(margin-right, 3rem);
+    line-height: 1.2rem;
+  }
+}
+
+.cover__descriptiontitle {
+  @include hidden;
+}
+
+.cover__descriptionimage {
+  background-image: linear-gradient(
+    to bottom,
+    rgba($color-darkness, 1),
+    rgba($color-darkness, 0.3) 40%,
+    rgba($color-darkness, 0.3)
+    );
+}
+
+.cover__actors {
+  margin-top: 2rem;
+}
+
+.cover__actorstitle {
+  @include hidden;
+}
+
+.cover__actortiles {
+  margin: 2rem;
+
+  li {
+    width: 100px;
+    height: 150px;
+    display: inline-block;
+    margin: 0 0.5rem 0.5rem 0;
+
+    a {
+      display: block;
+      text-align: center;
+      line-height: 150px;
+      height: 100%;
+      font-size: 1.2rem;
+      color: $color-artist-tiles;
+    }
+  }
+}

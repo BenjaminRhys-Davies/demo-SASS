@@ -1,0 +1,80 @@
+$height_image: 4rem;
+$source-image: 'images/sass-64.png';
+$duration-transition: 3s;
+$rotation-transition: 1440deg;
+$translateX-transition: 100%;
+
+%weave {
+  z-index: layer(banner, over);
+  background-image: linear-gradient(
+    to left,
+    rgba($color-highlight, 0),
+    rgba($color-lowlight, .9) 35%,
+    rgba($color-lowlight, 1) 50%,
+    rgba($color-lowlight, .9) 65%,
+    rgba($color-highlight, 0)
+    );
+}
+
+// BLOCK: banner
+.banner {
+  @include text-shadow($color-highlight, 20px);
+  @include rtl-invert(text-align, right);
+  @include linear-gradient(
+    right,
+    rgba($color-highlight, 0),
+    $color-lowlight 50%,
+    $color-lowlight
+    );
+  @include transition($duration-transition);
+
+  position: fixed;
+  width: 100%;
+  height: $height_image;
+  overflow: hidden;
+  display: block;
+  font-size: 7rem;
+  line-height: 3rem;
+  color: $color-highlight;
+  background-color: $background-main;
+  cursor: pointer;
+  z-index: layer(banner, bottom);
+
+  &::before {
+    @include rtl-invert(left, -50%);
+    @include transition($duration-transition);
+    position: absolute;
+    top: 0;
+    display: block;
+    content: '';
+    width: 100%;
+    height: $height_image;
+    z-index: layer(banner, logo);
+    background: url($source-image) 50% 50% no-repeat;
+  }
+
+  &:hover::before {
+    @include transform(translateX($translateX-transition) rotate($rotation-transition));
+
+    @include layout-modifiers(rtl) {
+      @include transform(translateX(-1 * $translateX-transition) rotate(-1 * $rotation-transition));
+    }
+  }
+
+  span {
+    position: relative;
+    z-index: layer(banner, under);
+
+    @include layout-modifiers(ltr) {
+      &:nth-child(even) {
+        @extend %weave;
+      }
+    }
+
+    @include layout-modifiers(rtl) {
+      &:nth-child(odd) {
+        @extend %weave;
+      }
+    }
+  }
+}

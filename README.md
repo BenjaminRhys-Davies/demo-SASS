@@ -1,5 +1,6 @@
 
 # SASS demonstration
+[![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square)](https://github.com/Flet/semistandard)
 
 ## Build
 
@@ -35,8 +36,9 @@ This demonstration covers the following areas of interest:
 With special emphasis upon the use of:
 * BEM naming methodology
 * SASS variables
-* reusable mixins
+* SASS mixins
 * CSS layering
 * Right-to-Left content direction modifiers
 * CSS3 transforms & transitions
 * CSS pseudo-elements
+* CSS3 Media Queries
