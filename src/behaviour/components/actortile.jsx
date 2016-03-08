@@ -13,7 +13,11 @@ const ActorTile = React.createClass({
   render () {
     const { name } = this.props;
     return (
-      <li><a href='#' style={{ 'backgroundColor': `#f0${name}f00` }}>{ name }</a></li>
+      <li className='actortile'>
+        <a className='actortile__link' href='#' style={{ 'backgroundColor': `#f0${name}f00` }}>
+          { name }
+        </a>
+      </li>
       );
   }
 

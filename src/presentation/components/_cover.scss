@@ -1,7 +1,11 @@
 .cover {
   color: $color-main;
   position: relative;
-  margin-top: -7rem;
+  margin-top: -6rem;
+
+  @media (min-width: $tablet-breakpoint) {
+    margin-top: -10rem;
+  }
 
   &::before {
     content: '';
@@ -25,6 +29,7 @@
   padding-top: 7.8rem;
   font-size: 1.6rem;
   line-height: 2.6rem;
+  margin: 0 2rem;
 }
 
 .cover__details {
@@ -54,9 +59,13 @@
 
 .cover__description {
   clear: both;
-  background: url('movie/kungfupanda/background-1.jpg') 0 6rem no-repeat;
+  background: url('movie/kungfupanda/background-1.jpg') 0 7rem no-repeat;
   background-attachment: fixed;
   background-size: contain;
+
+  @media (min-width: $tablet-breakpoint) {
+    background-position: 0 3rem;
+  }
 
   p {
     margin: 0 2rem 1rem 2rem;
@@ -73,8 +82,8 @@
   background-image: linear-gradient(
     to bottom,
     rgba($color-darkness, 1),
-    rgba($color-darkness, 0.3) 40%,
-    rgba($color-darkness, 0.3)
+    rgba($color-darkness, 0.6) 30%,
+    rgba($color-darkness, 0.6)
     );
 }
 
@@ -83,25 +92,17 @@
 }
 
 .cover__actorstitle {
-  @include hidden;
+  font-size: 1.4rem;
+  line-height: 1.2rem;
+  margin: 0 2rem;
 }
 
 .cover__actortiles {
   margin: 2rem;
+}
 
-  li {
-    width: 100px;
-    height: 150px;
-    display: inline-block;
-    margin: 0 0.5rem 0.5rem 0;
-
-    a {
-      display: block;
-      text-align: center;
-      line-height: 150px;
-      height: 100%;
-      font-size: 1.2rem;
-      color: $color-artist-tiles;
-    }
+@media (min-width: $tablet-breakpoint) {
+  .cover__margin {
+    @include rtl_invert(margin-right, 4rem);
   }
 }

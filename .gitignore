@@ -1,3 +1,4 @@
 /dist/
 /node_modules/
 scss-lint-report.xml
+npm-debug.log

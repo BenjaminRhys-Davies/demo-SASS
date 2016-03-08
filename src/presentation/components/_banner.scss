@@ -20,25 +20,22 @@ $translateX-transition: 100%;
 .banner {
   @include text-shadow($color-highlight, 20px);
   @include rtl-invert(text-align, right);
-  @include linear-gradient(
-    right,
-    rgba($color-highlight, 0),
-    $color-lowlight 50%,
-    $color-lowlight
-    );
   @include transition($duration-transition);
 
   position: fixed;
+  @include rtl_invert(right, 0);
   width: 100%;
   height: $height_image;
   overflow: hidden;
   display: block;
-  font-size: 7rem;
-  line-height: 3rem;
+  font-size: 7.4rem;
+  line-height: 2.8rem;
   color: $color-highlight;
-  background-color: $background-main;
+  background-color: $color-lowlight;
   cursor: pointer;
   z-index: layer(banner, bottom);
+  transition-timing-function: ease-in-out;
+  transition-duration: .3s;
 
   &::before {
     @include rtl-invert(left, -50%);
@@ -58,6 +55,15 @@ $translateX-transition: 100%;
 
     @include layout-modifiers(rtl) {
       @include transform(translateX(-1 * $translateX-transition) rotate(-1 * $rotation-transition));
+    }
+  }
+
+  @media (min-width: $tablet-breakpoint) {
+    width: 35rem;
+    @include transform(translate3d(40%, 500%, 0) rotate(90deg));
+
+    @include layout-modifiers(rtl) {
+      @include transform(translate3d(-1 * 40%, 500%, 0) rotate(-1 * 90deg));
     }
   }
 

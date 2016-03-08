@@ -1,0 +1,22 @@
+.actortile {
+  width: 100px;
+  height: 150px;
+  display: inline-block;
+  margin: 0 0.5rem 0.5rem 0;
+}
+
+.actortile__link {
+  display: block;
+  text-align: center;
+  line-height: 150px;
+  height: 100%;
+  width: 100%;
+  font-size: 1.2rem;
+  color: $color-artist-tiles;
+  transition: all .2s ease-in-out;
+  box-shadow: 0 0 0.4rem $box-shadow;
+
+  &:hover {
+    @include transform(scale(1.2));
+  }
+}
