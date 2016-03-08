@@ -16,6 +16,12 @@ If you prefer to just build without the live reload and build-on-each-change wat
 $ npm run build
 ```
 
+For a quick syntax and linting pass, run:
+
+```bash
+$ npm test
+```
+
 ## Achitecture
 * Gulp build tooling
 * SASS

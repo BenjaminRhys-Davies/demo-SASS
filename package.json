@@ -28,7 +28,7 @@
     "dev": "gulp --type dev",
     "start": "gulp",
     "build": "gulp build",
-    "test": "semistandard"
+    "test": "semistandard && gulp scss-lint"
   },
   "dependencies": {
     "react": "^0.13.3"
