@@ -1,0 +1,19 @@
+.movie {
+  padding-top: 4rem + 2rem;
+}
+
+.movie__details {
+  color: $color-main;
+  position: relative;
+  margin-top: -6rem;
+
+  @media (min-width: $tablet-breakpoint) {
+    margin-top: -10rem;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    @include height-by-background-image('movie/kungfupanda/background-1.jpg');
+  }
+}

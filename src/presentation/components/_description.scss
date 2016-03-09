@@ -1,0 +1,33 @@
+.description {
+  clear: both;
+  background: url('movie/kungfupanda/background-2.jpg') 0 7rem no-repeat;
+  background-attachment: fixed;
+  background-size: contain;
+
+  @media (min-width: $tablet-breakpoint) {
+    background-position: 0 3rem;
+  }
+
+  p {
+    margin: 0 2rem 1rem 2rem;
+    @include rtl_invert(margin-right, 3rem);
+    line-height: 1.2rem;
+  }
+}
+
+.description__title {
+  @include hidden;
+}
+
+.description__fade {
+  background-image: linear-gradient(
+    to bottom,
+    rgba($color-darkness, 1),
+    rgba($color-darkness, 0.6) 30%,
+    rgba($color-darkness, 0.6)
+    );
+
+  @media (min-width: $tablet-breakpoint) {
+    @include rtl_invert(padding-right, 5rem);
+  }
+}

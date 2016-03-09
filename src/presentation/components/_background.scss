@@ -1,8 +1,8 @@
 .background {
   position: fixed;
   top: 4rem + 3rem;
-  @include height-by-background-image('movie/kungfupanda/background-2.jpg');
-  background: url('movie/kungfupanda/background-2.jpg') 0 0 no-repeat;
+  @include height-by-background-image('movie/kungfupanda/background-1.jpg');
+  background: url('movie/kungfupanda/background-1.jpg') 0 0 no-repeat;
   background-size: contain;
 
   @media (min-width: $tablet-breakpoint) {

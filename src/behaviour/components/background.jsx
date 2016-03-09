@@ -7,7 +7,9 @@ const Background = React.createClass({
   displayName: 'Background',
 
   render () {
-    return (<div className='background'></div>);
+    return (
+      <div className='background'></div>
+    );
   }
 
 });

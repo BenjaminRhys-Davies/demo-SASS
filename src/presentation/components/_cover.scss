@@ -1,20 +1,4 @@
 .cover {
-  color: $color-main;
-  position: relative;
-  margin-top: -6rem;
-
-  @media (min-width: $tablet-breakpoint) {
-    margin-top: -10rem;
-  }
-
-  &::before {
-    content: '';
-    display: block;
-    @include height-by-background-image('movie/kungfupanda/background-1.jpg');
-  }
-}
-
-.cover__background {
   overflow: hidden;
   position: relative;
   background-image: linear-gradient(
@@ -23,6 +7,10 @@
     rgba($color-darkness, 1) 80%,
     rgba($color-darkness, 1)
     );
+
+  @media (min-width: $tablet-breakpoint) {
+    @include rtl_invert(padding-right, 5rem);
+  }
 }
 
 .cover__title {
@@ -54,55 +42,5 @@
 
   img {
     width: 100px;
-  }
-}
-
-.cover__description {
-  clear: both;
-  background: url('movie/kungfupanda/background-1.jpg') 0 7rem no-repeat;
-  background-attachment: fixed;
-  background-size: contain;
-
-  @media (min-width: $tablet-breakpoint) {
-    background-position: 0 3rem;
-  }
-
-  p {
-    margin: 0 2rem 1rem 2rem;
-    @include rtl_invert(margin-right, 3rem);
-    line-height: 1.2rem;
-  }
-}
-
-.cover__descriptiontitle {
-  @include hidden;
-}
-
-.cover__descriptionimage {
-  background-image: linear-gradient(
-    to bottom,
-    rgba($color-darkness, 1),
-    rgba($color-darkness, 0.6) 30%,
-    rgba($color-darkness, 0.6)
-    );
-}
-
-.cover__actors {
-  margin-top: 2rem;
-}
-
-.cover__actorstitle {
-  font-size: 1.4rem;
-  line-height: 1.2rem;
-  margin: 0 2rem;
-}
-
-.cover__actortiles {
-  margin: 2rem;
-}
-
-@media (min-width: $tablet-breakpoint) {
-  .cover__margin {
-    @include rtl_invert(margin-right, 4rem);
   }
 }
