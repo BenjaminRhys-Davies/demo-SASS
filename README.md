@@ -25,10 +25,12 @@ For a quick syntax and linting pass, run:
 $ npm test
 ```
 
-## Achitecture
-* Gulp build tooling
-* SASS
-* React
+## Tools
+* Connect for live development (live-reloading);
+* NPM for package management;
+* Gulp for running build and test tasks;
+* ReactJS for organising components;
+* SASS for component presentation;
 
 ## Topics
 
